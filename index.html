@@ -2,12 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>portfolio</title>
-    <link rel="stylesheet" href="./style.css"></style>
+    <title>Andrew Kirk - Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <meta name="robots" content="noindex, nofollow">
   </head>
   <body>
-    <h1>Hello World</h1>
-    <p>i am literall the best programer ever</p>
+    <div id="contents"></div>
+    <div id="main">
+
+      <div class="page" id="overview">
+        <div class="container" style="margin-left: auto; height: auto;">
+          <div class="row">
+            <div class="column">
+              <h1 class="expand">Andrew Kirk</h1>
+              <h2 class="expand" style="margin-top: 0; margin-bottom: 0;">Canada</h2>
+              <h2 class="special-text">Software Engineer</h2>
+            </div>
+            <div class="img-container" style="width: 150px; height: 150px; margin-left: auto;">
+              <img id="pfp" src="./pfp.png" alt="Profile Picture">
+            </div>
+          </div>
+          <p>A passionate and detail orientated software engineer, highly skilled in Python and Javascript. Proficient in AI and ML technologies such as natural language processing (NLP) and computer vision, as well as interactive web interfaces, and robust APIs</p>
+          <button style="width: fit-content; margin-left: auto;">Contact me!</button>
+        </div>
+      </div>
+
+
+      <div class="page" id="projects">
+        <div class="row-scroll">
+
+          <div class="container project" id="EasyCAD">
+            <div class="column">
+              <div class="row">
+                <h1>EasyCAD</h1>
+                <a href="https://github.com/Perceptronic-Systems/EasyCAD">Github</a>
+                <button onclick="window.location.href='https://Perceptronic-Systems.github.io/EasyCAD';">Try it yourself!</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="img-container" style="width: 50%; height: auto;">
+                <img src="./easycad.png" alt="EasyCAD">
+              </div>
+              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
+            </div>
+
+          </div> <div class="container project" id="omnichat">
+            <div class="column">
+              <div class="row">
+                <h1>omnichat</h1>
+                <a href="https://github.com/Perceptronic-Systems/omnichat">Github</a>
+                <button onclick="window.location.href='https://Perceptronic-Systems.github.io/omnichat';">Try it yourself!</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="img-container" style="width: 50%; height: auto;">
+                <img src="./public/omnichat.png" alt="omnichat">
+              </div>
+              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
+            </div>
+
+            </div> <div class="container project" id="AutoDoc">
+            <div class="column">
+              <div class="row">
+                <h1>AutoDoc</h1>
+                <a href="https://github.com/Perceptronic-Systems/AutoDoc">Github</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="img-container" style="width: 50%; height: auto;">
+                <img src="./public/autodoc.png" alt="AutoDoc">
+              </div>
+              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
+            </div>
+        </div>
+
+
+  </div>
+    
+    <script type="module" src="/contents.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

@@ -1,9 +1,261 @@
+@font-face {
+  font-family: "Ubuntu Sans Mono";
+  src: url(./public/fonts/UbuntuMonoNerdFontMono-Regular.ttf);
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
-  color: white;
+  color: rgb(172, 181, 182);
+}
+
+h1, h2, h3, h4 {
+  width: fit-content;
+}
+
+p, a {
+  padding: 1rem;
+  font-size: 14pt;
+  line-height: 2.5rem;
+  flex-shrink: 1;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+button {
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: rgb(47, 79, 185);
+  font-size: 12pt;
+  color: rgb(219, 219, 219);
+  padding: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+}
+
+button:hover {
+  transform: translateY(-8px) rotate(-2deg);
+  box-shadow:rgb(0, 0, 0) 2px 4px 20px;
+  background-color: rgb(66, 99, 207);
+}
+
+button:active {
+  background-color: rgb(30, 119, 188);
+  box-shadow: none;
 }
 
 body {
-  padding: 1rem;
-  background-color: rgb(27, 26, 24);
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  background-color: rgb(26, 27, 27);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+#contents {
+  display: flex;
+  flex-direction: column;
+  width: 8rem;
+  background-color: rgb(18, 19, 19);
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  overflow-y: scroll;
+  overflow-x: visible;
+  flex-shrink: 0;
+
+}
+
+#contents h2 {
+  margin-bottom: 3rem;
+}
+
+.chapter {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  width: fit-content;
+  font-size: 14pt;
+  text-decoration: none;
+  font-weight: bold;
+  transition: text-shadow 0.4s ease-in-out, padding-left 0.25s ease-in-out;
+}
+
+.chapter:hover {
+  padding-left: 1rem;
+  text-shadow: rgba(114, 253, 255, 0.9) 0px 0px 30px;
+}
+
+#main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  align-content: center;
+  justify-content: center;
+  overflow-x: hidden;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+}
+
+.container {
+  border-radius: 1rem;
+  background-color: rgb(18, 19, 19);
+  padding: 2rem;
+  margin: 1rem;
+  width: 50%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-scroll {
+  flex-shrink: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Keeps items safely scrollable from left-to-right */
+  gap: 1.5rem; /* Easily adds spacing between your scrolling items */
+}
+
+.project {
+  width: 75vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.project button {
+  margin-left: 3rem; margin-top: 1rem;
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: fit-content;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: 100%;
+}
+
+.img-container {
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+#pfp {
+  width: 90%;
+  height: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border: 0px solid transparent;
+  background: 
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(var(--angle, 0deg), #3a73d5, #4cd53a) border-box;
+  border-radius: 8px;
+  transition: border-width 0.2s ease-in-out;
+  animation: rotate 3s linear infinite;
+}
+
+#pfp:hover {
+  border-width: 4px;
+  transition: border-width 0.3s cubic-bezier(0.34, 2.4, 0.64, 1);;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to { --angle: 360deg; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.expand {
+  letter-spacing: 0px;
+  transition: letter-spacing 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.expand:hover {
+  letter-spacing: 10px;
+  text-shadow: rgb(114, 253, 255) 0px 0px 20px;
+}
+
+.special-text {
+  /* Keep the gradient and clipping active at all times */
+  background: linear-gradient(to right, #7fff5f, #f7f15b, #7047d8, #7fff5f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  background-size: 0% auto;
+  background-position: 0% center;
+  
+  /* Smoothly transition the text color, shadow, and background size */
+  transition: background-size 0.2s ease-in-out, color 0.2s ease-in-out, text-shadow 0.7s ease-in-out;
+}
+
+.special-text:hover {
+  color: transparent;
+  background-size: 200% auto;
+  text-shadow: rgba(33, 255, 255, 0.9) 0px 0px 30px;
+  
+  /* Trigger the infinite moving animation *after* it has faded in */
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
 }
