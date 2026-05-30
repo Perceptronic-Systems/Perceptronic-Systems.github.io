@@ -7,79 +7,109 @@
     <meta name="robots" content="noindex, nofollow">
   </head>
   <body>
-    <div id="contents"></div>
+    <div id="contents" class="fade-in-left"></div>
+    
     <div id="main">
 
       <div class="page" id="overview">
-        <div class="container" style="margin-left: auto; height: auto;">
+        <div class="container fade-in" style="margin-left: auto; height: auto;">
           <div class="row">
             <div class="column">
-              <h1 class="expand">Andrew Kirk</h1>
+              <h1 class="glow-card">Andrew Kirk</h1>
               <h2 class="expand" style="margin-top: 0; margin-bottom: 0;">Canada</h2>
               <h2 class="special-text">Software Engineer</h2>
             </div>
-            <div class="img-container" style="width: 150px; height: 150px; margin-left: auto;">
+            <div class="img-container fade-in-right" style="width: 150px; height: 150px; margin-left: auto;">
               <img id="pfp" src="./pfp.png" alt="Profile Picture">
             </div>
           </div>
-          <p>A passionate and detail orientated software engineer, highly skilled in Python and Javascript. Proficient in AI and ML technologies such as natural language processing (NLP) and computer vision, as well as interactive web interfaces, and robust APIs</p>
-          <button style="width: fit-content; margin-left: auto;">Contact me!</button>
+          <p>A passionate and detail orientated software engineer, highly skilled in <a href="#skills" class="inline-link">Python and Javascript</a>. Proficient in AI and ML technologies such as natural language processing (NLP) and computer vision, as well as <span class="special-text" style="text-decoration: underline;">interactive web interfaces</span>, and robust APIs</p>
+          <div class="button-container" style="margin-left: auto;"><button style="width: fit-content;" class="fade-in-left">Contact me!</button></div>
         </div>
       </div>
 
+      <div class="marker" id="projects"></div>
 
-      <div class="page" id="projects">
-        <div class="row-scroll">
-
-          <div class="container project" id="EasyCAD">
-            <div class="column">
-              <div class="row">
-                <h1>EasyCAD</h1>
-                <a href="https://github.com/Perceptronic-Systems/EasyCAD">Github</a>
-                <button onclick="window.location.href='https://Perceptronic-Systems.github.io/EasyCAD';">Try it yourself!</button>
-              </div>
-            </div>
+      <div class="page project-page fade-in" id="EasyCAD">
+        <div class="container project">
+          <div class="column">
             <div class="row">
-              <div class="img-container" style="width: 50%; height: auto;">
-                <img src="./easycad.png" alt="EasyCAD">
-              </div>
-              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
+              <h1 class="special-text">EasyCAD</h1>
+              <a href="https://github.com/Perceptronic-Systems/EasyCAD">Github</a>
+              <div class="button-container" style="margin-left: auto;"><button class="fade-in-left" onclick="window.location.href='https://Perceptronic-Systems.github.io/EasyCAD';">Try it yourself!</button></div>
             </div>
-
-          </div> <div class="container project" id="omnichat">
-            <div class="column">
-              <div class="row">
-                <h1>omnichat</h1>
-                <a href="https://github.com/Perceptronic-Systems/omnichat">Github</a>
-                <button onclick="window.location.href='https://Perceptronic-Systems.github.io/omnichat';">Try it yourself!</button>
-              </div>
+            <p>EasyCAD is a fully open-source and web-based CAD app built using Three.js</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/easycad.png" alt="EasyCAD">
             </div>
-            <div class="row">
-              <div class="img-container" style="width: 50%; height: auto;">
-                <img src="./public/omnichat.png" alt="omnichat">
-              </div>
-              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
-            </div>
-
-            </div> <div class="container project" id="AutoDoc">
-            <div class="column">
-              <div class="row">
-                <h1>AutoDoc</h1>
-                <a href="https://github.com/Perceptronic-Systems/AutoDoc">Github</a>
-              </div>
-            </div>
-            <div class="row">
-              <div class="img-container" style="width: 50%; height: auto;">
-                <img src="./public/autodoc.png" alt="AutoDoc">
-              </div>
-              <p>EasyCAD is a web-based CAD app built using Three.js for 3D rendering and implemented with custom JavaScript modules for interactive control, command execution, and file export.</p>
-            </div>
+          </div>
         </div>
+      </div> 
+
+      <div class="page project-page fade-in" id="omnichat">
+        <div class="container project project-page" id="omnichat">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">omnichat</h1>
+              <a href="https://github.com/Perceptronic-Systems/omnichat">Github</a>
+              <div class="button-container" style="margin-left: auto;"><button class="fade-in-left" onclick="window.location.href='https://Perceptronic-Systems.github.io/omnichat';">Try it yourself!</button></div>
+            </div>
+            <p>Omnichat is a completely local AI chat system and interface featuring MCP tools and RAG</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/omnichat.png" alt="omnichat">
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="page project-page fade-in" id="AutoDoc">
+        <div class="container project" id="AutoDoc">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">AutoDoc</h1>
+              <a href="https://github.com/Perceptronic-Systems/AutoDoc">Github</a>
+            </div>
+            <p>AutoDoc solves the problem of undocumented code by scanning a github repo and generating a clean and presentable readme</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/autodoc.png" alt="AutoDoc">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="skills">
+        <div class="container" style="width: 50%; height: auto; margin-left: auto;">
+          <h1 class="special-text">Skills</h1>
+          <h2 class="special-text" style="margin-bottom: 0;">Programming languages</h2>
+          <p>Python, Javascript, C++, C#, C, Bash, HTML, CSS</p>
+          <h2 class="expand" style="margin-bottom: 0;">AI & ML</h2>
+          <p>Pytorch, Tensorflow, Ollama, Langchain, MCP, HuggingFace, OpenCV</p>
+          <h2 class="expand" style="margin-bottom: 0;">Backend</h2>
+          <p>Docker, Node.js, Nginx, Linux (Arch & Debian), FastAPI, Flask</p>
+        </div>
+      </div>
+
+      <div class="marker" id="concept work"></div>
+
+      <div class="page project-page fade-in" id="code subdivision">
+        <div class="container project">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">Code Subdivision</h1>
+            </div>
+            <p>Splitting up a complex code base into smaller bite sized pieces is a tedious job in software development; the purpose of this program would be to automate this basic yet time consuming task with the use of a local large language model</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/autodoc.png" alt="subdivide">
+            </div>
+          </div>
+        </div>
+      </div> 
 
 
-  </div>
-    
-    <script type="module" src="/contents.js"></script>
+    </div> 
+
+
+<script type="module" src="/contents.js"></script>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
