@@ -84,12 +84,12 @@ button {
   transition: transform 0.2s ease-in-out;
   transform: translateY(-8px) rotate(-2deg);
   box-shadow:rgb(0, 0, 0) 2px 4px 20px;
-  background-color: rgb(66, 99, 207);
+  background-color: rgb(25, 67, 208);
 }
 
 .button-container button.active:active {
   transition: transform 0.2s ease-in-out;
-  background-color: rgb(30, 119, 188);
+  background-color: rgb(11, 139, 237);
   box-shadow: none;
 }
 
@@ -242,6 +242,36 @@ body {
   flex-direction: column;
   width: fit-content;
   height: 100%;
+}
+
+.canvas-wrapper {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 2rem;
+  z-index: 10;
+}
+
+#scramble, #solve {
+  padding: 1rem;
+}
+
+#scramble {
+  background-color: purple;
+}
+#scramble:hover {
+  background-color: rgb(157, 10, 157);
+}
+#scramble:active {
+  background-color: rgb(180, 5, 180);
+}
+
+#scramble:disabled, #solve:disabled {
+  background-color: rgb(40, 40, 40);
+  opacity: 0.6;
+  transform: translateY(0px) rotate(0deg)
 }
 
 .img-container {
@@ -402,4 +432,12 @@ body {
   100% {
     --bg-pos: 200%;
   }
+}
+
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Allows users to click through the canvas */
+  z-index: 9999;
 }

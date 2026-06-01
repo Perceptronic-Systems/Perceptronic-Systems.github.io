@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import gsap from 'gsap';
 import cubeSolver from 'cube-solver';
 
@@ -88,6 +89,8 @@ function createCubelet(x, y, z) {
     }
     return cube;
 }
+
+let turning = false;
 
 class RubixCube {
     constructor() {
@@ -220,7 +223,8 @@ class RubixCube {
         return stateStringArray.join('');
     }
 
-    turnSide(move, duration) {
+    turnSide(move, duration, finish=false) {
+        turning = true;
         const match = move.match(/^([RULDFB])([2']?)$/);
         if (!match) return;
 
@@ -273,13 +277,18 @@ class RubixCube {
                 this.main.remove(selectionGroup); 
                 this.updateMatrix();
                 this.turning = false;
+                if (finish === true) turning = false;
             }
         });
     }
 
     executeSolution(moveString, speed = 0.3) {
+        turning = true;
         const moves = moveString.split(' ');
-        moves.forEach(move => this.turnSide(move, speed));
+        moves.forEach((move, index) => {
+            const isLast = index === moves.length - 1;
+            this.turnSide(move, speed, isLast);
+        });
     }
 }
 
@@ -307,30 +316,56 @@ class RubixCubeSolver {
     }
 }
 
-// Execution Loop
 const rubixCube = new RubixCube();
 scene.add(rubixCube.main);
+let scramble = '';
+let solution = '';
+
+const controls = new OrbitControls( camera, renderer.domElement );
+controls.minDistance = 10;
+controls.maxDistance = 10;
+controls.enableDamping = true;
+controls.dampingFactor = 0.05;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 2.0;
+controls.update();
+
+const scrambleButton = document.getElementById('scramble');
+const solveButton = document.getElementById('solve');
+scrambleButton.disabled = true;
+solveButton.disabled = true;
+scrambleButton.addEventListener('click', (e) => {
+    const newScramble = cubeSolver.scramble(); 
+    scramble = scramble ? `${scramble} ${newScramble}` : newScramble;
+    rubixCube.executeSolution(newScramble, 0.1);
+});
+solveButton.addEventListener('click', (e) => {
+    if (scramble) {
+        solution = cubeSolver.solve(scramble);
+        rubixCube.executeSolution(solution);
+        scramble = '';
+    }
+});
 
 // Scramble first, then test the scanning engine solution
 
 cubeSolver.initialize('kociemba');
 
-const scramble = cubeSolver.scramble(); 
-console.log(`Scramble: ${scramble}`); 
+scramble = cubeSolver.scramble(); 
 rubixCube.executeSolution(scramble, 0.1);
 // Example output: "D2 B' R' B L' B D2 F2 R2 D2 F2 L2 B'..."
 
-// 2. Solve the full cube from that scramble
-const solution = cubeSolver.solve(scramble);
-rubixCube.executeSolution(solution);
-console.log(`Solution: ${solution}`); 
-// Example output: "R B' R U' D' R'..."
-
 export function animate() {
+    if (turning) {
+        scrambleButton.disabled = true;
+        solveButton.disabled = true;
+    } else {
+        scrambleButton.disabled = false;
+        solveButton.disabled = false;
+    }
     requestAnimationFrame(animate);
     // Smooth idle spin to admire your work
-    rubixCube.main.rotation.x += 0.005;
-    rubixCube.main.rotation.y += 0.005;
+    controls.update();
     renderer.render(scene, camera);
 }
 
