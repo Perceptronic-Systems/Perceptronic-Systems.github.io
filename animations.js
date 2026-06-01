@@ -1,5 +1,3 @@
-import { resize, animate } from './rubix-cube.js';
-
 document.addEventListener("DOMContentLoaded", () => {
   const fadeElements = document.querySelectorAll(".fade-in, .fade-in-left, .fade-in-right");
 
@@ -20,9 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fadeElements.forEach((element) => observer.observe(element));
 });
-
-window.addEventListener('resize', () => {
-  resize();
-});
-
-animate();
