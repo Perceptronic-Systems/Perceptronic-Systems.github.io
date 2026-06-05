@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Andrew Kirk - Portfolio</title>
     <meta name="robots" content="noindex, nofollow">
-    <script type="module" crossorigin src="/assets/index-q22AqQWU.js"></script>
+    <script type="module" crossorigin src="/assets/index-CxUxUxIU.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-BxXiREF_.css">
   </head>
   <body>
@@ -84,7 +84,15 @@
       </div>
 
       <div class="page" id="skills">
-        <div class="container" style="width: 50%; height: auto; margin-left: auto;">
+        <div class="column" style="width: 50%; height: auto; position: relative;">
+          <div class="row" style="width: 100%; padding-left: 1rem;"><h2 id="score"></h2></div>
+          <div id="lose-display" style="position: absolute; left: 50%; top: 50%; background-color: rgb(47, 49, 54); border-radius: 1rem; padding: 1rem; width: 60%; align-items: center; display: flex; flex-direction: column; translate: -50% -50%; opacity: 0; visibility: hidden;">
+            <h3 id="end-score">Score: </h3>
+            <button id="restart-game" style="width: 100%">Retry</button>
+          </div>
+          <canvas id="tetris-canvas" style="flex-grow: 1; width: 100%; height: 0; min-height: 0;"></canvas>
+        </div>
+        <div class="container" style="width: 50%; height: auto; margin-left: auto; z-index: 1;">
           <h1 class="special-text">Skills</h1>
           <h2 class="special-text" style="margin-bottom: 0;">Programming languages</h2>
           <p>Python, Javascript, C++, C#, C, Bash, HTML, CSS</p>
