@@ -168,7 +168,7 @@ body {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   margin: 0px;
   padding: 0px;
   align-content: center;
@@ -190,6 +190,19 @@ body {
   display: flex;
   flex-direction: column;
   box-shadow: rgba(199, 243, 255, 0.3) 0px 0px 10px;
+}
+
+#overview-container {
+  margin-left: auto;
+  width: 50%;
+  height: auto;
+}
+
+.img-container {
+  width: 25vw;
+  height: 25vw;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 .row-scroll {
@@ -246,6 +259,8 @@ body {
 
 .canvas-wrapper {
   position: relative;
+  width: 50%;
+  height: auto;
 }
 
 .overlay {
@@ -440,4 +455,51 @@ body {
   left: 0;
   pointer-events: none; /* Allows users to click through the canvas */
   z-index: 9999;
+}
+
+@media (max-width: 812px) {
+  * {
+    font-size: 0.6rem;
+  }
+  #contents {
+    width: 0px;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  #overview {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100dvh;
+    overflow-y: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .special-text {
+    font-size: 2rem;
+  }
+
+  #overview-container {
+    width: calc(100% - 4.5rem);
+    margin: 0.25rem;
+    height: auto;
+    align-self: flex-end;
+  }
+
+  .canvas-wrapper {
+    height: 70dvw;
+    align-self: flex-start;
+    width: 100%;
+  }
 }

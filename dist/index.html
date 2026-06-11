@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Andrew Kirk - Portfolio</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script type="module" crossorigin src="/assets/index-CxUxUxIU.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BxXiREF_.css">
+  </head>
+  <body>
+    <div id="contents" class="fade-in-left"></div>
+    
+    <div id="main">
+
+      <div class="page" id="overview">
+        <div class="canvas-wrapper" style="width: 50%; height: auto;">
+          <canvas id="rubix-cube-canvas" style="width: 100%; height: 100%; background-color: transparent;"></canvas>
+          <div class="button-container overlay" style="left: 2rem;"><button id="scramble" class="fade-in-left">Scramble</button></div>
+          <div class="button-container overlay" style="right: 2rem;"><button id="solve" class="fade-in-right">Solve</button></div>
+        </div>
+          <div class="container fade-in" style="margin-left: auto; height: auto;">
+          <div class="row">
+            <div class="column">
+              <h1 class="glow-card">Andrew Kirk</h1>
+              <h2 class="expand" style="margin-top: 0; margin-bottom: 0;">Canada</h2>
+              <h2 class="special-text">Full-Stack Developer</h2>
+            </div>
+            <div class="img-container fade-in-right" style="width: 150px; height: 150px; margin-left: auto;">
+              <img id="pfp" src="/assets/pfp-_SE_c4mX.png" alt="Profile Picture">
+            </div>
+          </div>
+          <p>A passionate and detail orientated full-stack developer, highly skilled in <a href="#skills" class="inline-link">Python and Javascript</a>. Proficient in AI and ML technologies such as natural language processing (NLP) and computer vision, as well as <span class="special-text" data-particle style="text-decoration: underline;">interactive web interfaces</span>, and robust APIs</p>
+          <div class="button-container" style="margin-left: auto;"><button style="width: fit-content;" class="fade-in-left" onclick="window.location.href='contact.html'">Contact me!</button></div>
+        </div>
+      </div>
+
+      <div class="marker" id="projects"></div>
+
+      <div class="page project-page fade-in" id="EasyCAD">
+        <div class="container project">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">EasyCAD</h1>
+              <a href="https://github.com/Perceptronic-Systems/EasyCAD">Github</a>
+              <div class="button-container" style="margin-left: auto;"><button class="fade-in-left" onclick="window.location.href='https://Perceptronic-Systems.github.io/EasyCAD';">Try it yourself!</button></div>
+            </div>
+            <p>EasyCAD is a fully open-source and web-based CAD app built using Three.js</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/easycad.png" alt="EasyCAD">
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <div class="page project-page fade-in" id="omnichat">
+        <div class="container project project-page" id="omnichat">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">omnichat</h1>
+              <a href="https://github.com/Perceptronic-Systems/omnichat">Github</a>
+              <div class="button-container" style="margin-left: auto; visibility: hidden"><button class="fade-in-left" onclick="window.location.href='https://Perceptronic-Systems.github.io/omnichat';">Try it yourself!</button></div>
+            </div>
+            <p>Omnichat is a completely local AI chat system and interface featuring MCP tools and RAG</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/omnichat.png" alt="omnichat">
+            </div>
+          </div>
+        </div> 
+      </div>
+
+      <div class="page project-page fade-in" id="AutoDoc">
+        <div class="container project" id="AutoDoc">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">AutoDoc</h1>
+              <a href="https://github.com/Perceptronic-Systems/AutoDoc">Github</a>
+            </div>
+            <p>AutoDoc solves the problem of undocumented code by scanning a github repo and generating a clean and presentable readme</p>
+            <div class="img-container fade-in" style="flex-shrink: 1;">
+              <img src="/autodoc.png" alt="AutoDoc">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="skills">
+        <div class="column" style="width: 50%; height: auto; position: relative;">
+          <div class="row" style="width: 100%; padding-left: 1rem;"><h2 id="score"></h2></div>
+          <div id="lose-display" style="position: absolute; left: 50%; top: 50%; background-color: rgb(47, 49, 54); border-radius: 1rem; padding: 1rem; width: 60%; align-items: center; display: flex; flex-direction: column; translate: -50% -50%; opacity: 0; visibility: hidden;">
+            <h3 id="end-score">Score: </h3>
+            <button id="restart-game" style="width: 100%">Retry</button>
+          </div>
+          <canvas id="tetris-canvas" style="flex-grow: 1; width: 100%; height: 0; min-height: 0;"></canvas>
+        </div>
+        <div class="container" style="width: 50%; height: auto; margin-left: auto; z-index: 1;">
+          <h1 class="special-text">Skills</h1>
+          <h2 class="special-text" style="margin-bottom: 0;">Programming languages</h2>
+          <p>Python, Javascript, C++, C#, C, Bash, HTML, CSS</p>
+          <h2 class="expand" style="margin-bottom: 0;">AI & ML</h2>
+          <p>Pytorch, Tensorflow, Ollama, Langchain, MCP, HuggingFace, OpenCV</p>
+          <h2 class="expand" style="margin-bottom: 0;">Backend</h2>
+          <p>Docker, Node.js, Nginx, Linux (Arch & Debian), FastAPI, Flask</p>
+        </div>
+      </div>
+
+      <div class="marker" id="concept work"></div>
+
+      <div class="page project-page fade-in" id="code subdivision">
+        <div class="container project">
+          <div class="column">
+            <div class="row">
+              <h1 class="special-text">Code Subdivision</h1>
+            </div>
+            <p>Splitting up a complex code base into smaller bite sized pieces is a tedious job in software development; the purpose of this program would be to automate this basic yet time consuming task with the use of a local large language model</p>
+          </div>
+        </div>
+      </div> 
+
+      <div class="page" id="contact" style="flex-grow: 1;">
+        <div style="width: 100%; height: auto;" class="container">
+          <form action="https://formspree.io/f/xeedyjrz" method="POST">
+            <div class="row">
+              <div class="column">
+                <h1>Andrew Kirk - Contact</h1>
+                <p>Let's keep in touch!</p>
+                <h3>Name</h3>
+                <div class="row">
+                  <input name="first" placeholder="first" required>
+                  <input name="last" placeholder="last" required>
+                </div>
+                <h3>Contact Info</h3>
+                <div class="row">
+                  <input name="email" placeholder="email address" required>
+                  <input name="phone" placeholder="phone number" required>
+                </div>
+              </div>
+              <div class="column" style="flex-grow: 1; height: auto;">
+                <h3>Message</h3>
+                <textarea rows="5" columns="60" placeholder="Type your message here..." style="flex-grow: 1;" required></textarea>
+                <div class="button-container" style="margin-left: auto;"><button type="submit">Send Message</button></div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    </div> 
+
+  </body>
+</html>
